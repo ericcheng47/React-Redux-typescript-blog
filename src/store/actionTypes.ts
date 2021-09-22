@@ -1,2 +1,2 @@
-export const ADD_ARTICLE = "ADD_ARTICLE"
-export const REMOVE_ARTICLE = "REMOVE_ARTICLE"
+export const ADD_TRACK = "ADD_TRACK"
+export const REMOVE_TRACK = "REMOVE_TRACK"

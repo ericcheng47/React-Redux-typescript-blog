@@ -3,35 +3,45 @@ import * as React from "react"
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import "./styles.css"
 
-import { Article } from "./components/Article"
-import { AddArticle } from "./components/AddArticle"
-import { addArticle, removeArticle } from "./store/actionCreators"
+import { Track } from "./components/Track"
+import { AddTrack } from "./components/AddTrack"
+import { addTrack, removeTrack } from "./store/actionCreators"
 import { Dispatch } from "redux"
 
 const App: React.FC = () => {
-  const articles: readonly IArticle[] = useSelector(
-    (state: ArticleState) => state.articles,
+  const userInfo: IUser = useSelector(
+    (state: TrackState) => state.user_info,
+    shallowEqual
+  )
+
+  const tracks: readonly ITrack[] = useSelector(
+    (state: TrackState) => state.tracks,
     shallowEqual
   )
 
   const dispatch: Dispatch<any> = useDispatch()
 
-  const saveArticle = React.useCallback(
-    (article: IArticle) => dispatch(addArticle(article)),
+  const saveTrack = React.useCallback(
+    (track: ITrack) => dispatch(addTrack(track)),
     [dispatch]
   )
 
   return (
     <main>
-      <h1>My Articles</h1>
-      <AddArticle saveArticle={saveArticle} />
-      {articles.map((article: IArticle) => (
-        <Article
-          key={article.id}
-          article={article}
-          removeArticle={removeArticle}
+      <h1>My Audio Tracks</h1>
+      <form className="Add-track">
+        <p>First Name: <strong>{userInfo.first_name}</strong></p>
+        <p>Last Name: <strong>{userInfo.last_name}</strong></p>
+        <p>Date of Birth: <strong>{userInfo.date_birth}</strong></p>
+      </form>
+      {tracks.map((track: ITrack) => (
+        <Track
+        key={track.id}
+        track={track}
+        removeTrack={removeTrack}
         />
       ))}
+      <AddTrack saveTrack={saveTrack} />
     </main>
   )
 }

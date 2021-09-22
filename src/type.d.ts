@@ -1,16 +1,23 @@
-interface IArticle {
+interface IUser {
+    first_name: string
+    last_name: string
+    date_birth: string
+}
+
+interface ITrack {
     id: number
     title: string
-    body: string
+    file_path: string
 }
 
-type ArticleState = {
-    articles: IArticle[]
+type TrackState = {
+    tracks: ITrack[],
+    user_info: IUser
 }
 
-type ArticleAction = {
+type TrackAction = {
     type: string
-    article: IArticle
+    track: ITrack
 }
 
-type DispatchType = (args: ArticleAction) => ArticleAction
+type DispatchType = (args: TrackAction) => TrackAction

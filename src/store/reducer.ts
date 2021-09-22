@@ -1,44 +1,51 @@
 import * as actionTypes from "./actionTypes"
 
-const initialState: ArticleState = {
-  articles: [
+const initialState: TrackState = {
+  tracks: [
     {
       id: 1,
       title: "post 1",
-      body:
+      file_path:
         "Quisque cursus, metus vitae pharetra Nam libero tempore, cum soluta nobis est eligendi",
     },
     {
       id: 2,
       title: "post 2",
-      body:
+      file_path:
         "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint",
     },
   ],
+  user_info:
+  {
+    first_name: 'Milan',
+    last_name: 'Manigoda',
+    date_birth: '1/41/888',
+  }
 }
 
+
 const reducer = (
-    state: ArticleState = initialState,
-    action: ArticleAction
-  ): ArticleState => {
+  state: TrackState = initialState,
+  action: TrackAction
+  ): TrackState => {
     switch (action.type) {
-      case actionTypes.ADD_ARTICLE:
-        const newArticle: IArticle = {
+      case actionTypes.ADD_TRACK:
+        const newTrack: ITrack = {
           id: Math.random(), // not really unique
-          title: action.article.title,
-          body: action.article.body,
+          title: action.track.title,
+          file_path: action.track.file_path,
         }
         return {
           ...state,
-          articles: state.articles.concat(newArticle),
+          tracks: state.tracks.concat(newTrack),
         }
-      case actionTypes.REMOVE_ARTICLE:
-        const updatedArticles: IArticle[] = state.articles.filter(
-          article => article.id !== action.article.id
+      case actionTypes.REMOVE_TRACK:
+        const updatedTracks: ITrack[] = state.tracks.filter(
+          track => track.id !== action.track.id
         )
         return {
           ...state,
-          articles: updatedArticles,
+          tracks: updatedTracks,
         }
     }
     return state

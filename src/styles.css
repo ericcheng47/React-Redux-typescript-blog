@@ -20,7 +20,7 @@ main > h1 {
   text-align: center;
 }
 
-.Add-article {
+.Add-track {
   margin: 2rem auto;
   padding: 1rem;
   background: #fff;
@@ -31,7 +31,7 @@ main > h1 {
   border-radius: 10px;
 }
 
-.Add-article input {
+.Add-track input {
   display: block;
   margin: 1rem auto;
   width: 20rem;
@@ -41,7 +41,7 @@ main > h1 {
   outline: none;
 }
 
-.Add-article button {
+.Add-track button {
   width: 21rem;
   padding: 0.7rem;
   border: 1px solid #00b8e6;
@@ -52,17 +52,17 @@ main > h1 {
   outline: none;
 }
 
-.Add-article button:hover {
+.Add-track button:hover {
   background: #0093b8;
 }
 
-.Add-article button:disabled {
+.Add-track button:disabled {
   background: #d8d8d8;
   border: 1px solid #d8d8d8;
   cursor: not-allowed;
 }
 
-.Article {
+.Track {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,22 +71,22 @@ main > h1 {
   border-radius: 10px;
 }
 
-.Article:not(:last-child) {
+.Track:not(:last-child) {
   border-bottom: 2px solid #f5f6f7;
 }
 
-.Article h1 {
+.Track h1 {
   color: #222;
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.7rem;
 }
 
-.Article p {
+.Track p {
   padding-right: 1rem;
   color: #444;
 }
-.Article button {
+.Track button.Delete-track {
   padding: 0.5rem 0.7rem;
   border: 1px solid #d34b4b;
   background: #d34b4b;
@@ -96,6 +96,21 @@ main > h1 {
   outline: none;
 }
 
-.Article button:hover {
+.Track button.Delete-track:hover {
   background: #e06a6a;
+}
+
+.Track button.Play-track {
+  margin-right: 1rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #4bd37f;
+  background: #4bd37f;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Track button.Play-track:hover {
+  background: #6ae091;
 }

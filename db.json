@@ -1,0 +1,18 @@
+{
+  "first_name" : "Milan",
+  "last_name" : "Manigoda",
+  "birth_date" : "16/6/1991",
+  "interests": [ "Playing Sports", "listening Music", "Reading"],
+  "tracks": [
+    {
+      "title": "Track 1",
+      "file_path": "",
+      "id": 1
+    },
+    {
+      "title": "Track 2",
+      "file_path": "",
+      "id": 2
+    }
+  ]
+}
