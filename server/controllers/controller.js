@@ -1,4 +1,4 @@
-const productModule = require("../models/product.model.js");
+const productModule = require("../models/model.js");
 
 const resCallback = (res, err, data, defaultErrMessage = null) => {
   if (err) {

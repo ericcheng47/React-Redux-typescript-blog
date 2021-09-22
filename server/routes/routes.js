@@ -1,5 +1,5 @@
 module.exports = app => {
-  const productModule = require("../controllers/product.controller.js");
+  const productModule = require("../controllers/controller.js");
 
   var multer = require('multer');
   var storage = multer.diskStorage({

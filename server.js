@@ -13,12 +13,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static("upload"));
 
-app.get('/*', function(req,res) {
+// app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname+'/build/index.html'));
-});
+//   res.sendFile(path.join(__dirname+'/build/index.html'));
+// });
 
-require("./server/routes/product.routes.js")(app);
+require("./server/routes/routes.js")(app);
 
 // Start the app by listening on the default Heroku port
 server.listen(process.env.PORT || 80, ()=>{
